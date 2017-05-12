@@ -1,0 +1,15 @@
+Extremly Simple Quickstart 
+(without starti3, xfce4 chroot installed as primary chroot for sudo startxfce4, and without VPN):
+
+Download menu.sh on chromebook in Downloadsfolder
+1.In Chromebrowser press ctrl+alt+t for terminal.
+2.Type "shell"+enter
+3.Type "cp ~/Downloads/menu.sh ~/menu.sh"+enter
+4.Type "chmod +x ~/menu.sh"+enter
+5.Type "echo "bash ~/menu.sh >> ~/.bashrc"+enter
+6.Type "exit"+enter
+
+Repeat 1+2
+
+
+Advanced: cat menu.sh and see comments on bottom
