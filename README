@@ -11,5 +11,15 @@ Download menu.sh on chromebook in Downloadsfolder
 
 Repeat 1+2
 
+Uninstall:
+1+2
+Select Exit
+Type "vi ~/.bashrc"+enter
+Go to line with bash ~/menu.sh"
+Press "dd"
+Press Esc-key
+Type ":wq"+enter
+Type "exit"+enter
+
 
 Advanced: cat menu.sh and see comments on bottom
