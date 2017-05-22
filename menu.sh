@@ -3,7 +3,7 @@
 # www.pro-toolz.net
 # modified by The1andONLYdave
 # kulsch-it.blogspot.de 
-# @REPO https://github.com/The1andONLYdave/crouton-helper
+# @REPO github.com/The1andONLYdave
 # V0.1 - english
 
       E='echo -e';e='echo -en';trap "R;exit" 2
@@ -15,7 +15,7 @@
   WRITE(){ $e "\e(B";}
    MARK(){ $e "\e[07m";}
  UNMARK(){ $e "\e[27m";}
-      R(){ CLEAR ;stty sane;$e "\ec\e[92;40m\e[J";};
+      R(){ CLEAR ;stty sane;$e "\ec\e[32;40m\e[J";};
    HEAD(){ DRAW
            for each in $(seq 1 15);do
            $E "   x                                          x"
@@ -52,12 +52,12 @@ REFRESH(){ after=$((i+1)); before=$((i-1))
      SC(){ REFRESH;MARK;$S;$b;cur=`ARROW`;}
      ES(){ MARK;$e "ENTER = main menu ";$b;read;INIT;};INIT
   while [[ "$O" != " " ]]; do case $i in
-        0) S=M0;SC;if [[ $cur == "" ]];then R;$e "\n$(sudo startxfce4)\n";ES;fi;;
-        1) S=M1;SC;if [[ $cur == "" ]];then R;$e "\n$(sudo starti3   )\n";ES;fi;;
-        2) S=M2;SC;if [[ $cur == "" ]];then R;$e "\n$(sudo edit-chroot -b xenial2  )\n";ES;fi;;
-        3) S=M3;SC;if [[ $cur == "" ]];then R;$e "\n$(sudo edit-chroot -f /media/removable/USB\ Drive/BackupLinux/ -b xenial2)\n";ES;fi;;
+        0) S=M0;SC;if [[ $cur == "" ]];then R;sudo startxfce4 -b;exit 0;fi;;
+        1) S=M1;SC;if [[ $cur == "" ]];then R;sudo starti3  ;ES;fi;;
+        2) S=M2;SC;if [[ $cur == "" ]];then R;sudo edit-chroot -b xenial2  ;ES;fi;;
+        3) S=M3;SC;if [[ $cur == "" ]];then R;sudo edit-chroot -f /media/removable/USB\ Drive/BackupLinux/ -b xenial2;ES;fi;;
         4) S=M4;SC;if [[ $cur == "" ]];then R;$e "\n$(vpnprepare )\n";ES;fi;;
-        5) S=M5;SC;if [[ $cur == "" ]];then R;$e "\n$(sudo enter-chroot)\n";ES;fi;;
+        5) S=M5;SC;if [[ $cur == "" ]];then R;sudo enter-chroot;ES;fi;;
         6) S=M6;SC;if [[ $cur == "" ]];then R;$e "\n$($e by oTo modified by The1andONLYdave && tail -n 38 ./$0 )\n";ES;fi;;
         7) S=M7;SC;if [[ $cur == "" ]];then R;exit 0;fi;;
  esac;POS;done
